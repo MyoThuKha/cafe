@@ -1,4 +1,6 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
   padding: 0;
   margin: 0;
@@ -6,21 +8,18 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.section3 {
+  background-color: #402b23;
+}
+.section4 {
+  background-color: #f4f3f1;
+}
+.section5 {
+  background-color: #f0d781;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.flip-text {
+  writing-mode: vertical-lr;
+  width: 100%;
+  transform: rotate(180deg);
 }
