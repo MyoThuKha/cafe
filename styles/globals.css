@@ -8,20 +8,7 @@ body {
   margin: 0;
   background-color: #402b23;
   font-family: "Noto Serif";
-  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
 }
-
-/* .section3 {
-  background-color: #402b23;
-} */
-.section4 {
-  background-color: #f4f3f1;
-}
-.section5 {
-  background-color: #f0d781;
-}
-
 .flip-text {
   writing-mode: vertical-lr;
   width: 100%;
@@ -30,4 +17,11 @@ body {
 
 .half-width {
   width: 50vw;
+}
+
+.top-h {
+  height: 80%;
+}
+.bottom-h {
+  height: 20%;
 }

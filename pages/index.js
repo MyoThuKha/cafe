@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import { useState, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Col3 from "../components/col3";
@@ -18,10 +17,11 @@ export default function Home({ data }) {
   const [showList, setShowList] = useState(false);
   const [full, setFull] = useState(false);
   const [curr, setCurr] = useState();
-  const displayData = useMemo(() => {
-    return showList ? data.slice(0, 13) : data.slice(0, 4);
-  }, [showList, data]);
-  // const dynamicHeight = showList ? "h-full" : "h-2/5";
+  const displayData = useMemo(
+    () => (showList ? data.slice(0, 13) : data.slice(0, 4)),
+    [data, showList]
+  );
+  const deg = showList ? -90 : 90;
   const handleChange = () => {
     setFull(false);
     setShowList(false);
@@ -62,6 +62,7 @@ export default function Home({ data }) {
                             transition={{ delay: 0.8 }}
                             onClick={() => {
                               setFull(true);
+                              setShowList(true);
                               setCurr(each);
                             }}
                           >
@@ -74,7 +75,8 @@ export default function Home({ data }) {
 
                   <div className="flex justify-end mr-8">
                     <motion.svg
-                      whileTap={{ rotate: 90 }}
+                      whileTap={{ rotate: deg }}
+                      transition={{ stiffness: 300 }}
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -97,6 +99,7 @@ export default function Home({ data }) {
                 </div>
               )}
             </div>
+
             <AnimatePresence>{!full && <Col3 />}</AnimatePresence>
           </div>
         </div>

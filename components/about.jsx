@@ -24,7 +24,8 @@ const About = ({ curr, handleChange }) => {
       className="half-width"
     >
       <div className="flex justify-end m-8">
-        <svg
+        <motion.svg
+          whileHover={{ scale: 1.1 }}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -40,7 +41,7 @@ const About = ({ curr, handleChange }) => {
             strokeLinejoin="round"
             d="M6 18L18 6M6 6l12 12"
           />
-        </svg>
+        </motion.svg>
       </div>
       <div className="flex justify-center items-center relative h-60 mx-16 my-8">
         <Image
