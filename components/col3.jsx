@@ -5,6 +5,7 @@ const Col3 = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
+      exit={{ x: "100vw", opacity: 0 }}
       transition={{ stiffness: 10, duration: 1 }}
       className="col-span-1"
     >

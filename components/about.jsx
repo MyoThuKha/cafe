@@ -21,7 +21,7 @@ const About = ({ curr, handleChange }) => {
       initial="init"
       animate="animation"
       transition="transition"
-      className="col-span-2"
+      className="half-width"
     >
       <div className="flex justify-end m-8">
         <svg
