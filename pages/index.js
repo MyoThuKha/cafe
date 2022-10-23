@@ -31,7 +31,7 @@ export default function Home({ data }) {
       <Head>
         <title>Cafe</title>
       </Head>
-      <div className="grid grid-cols-4 h-screen">
+      <div className="grid grid-cols-2 h-screen">
         <div className="col-span-2 bg-white flex items-center pl-6">
           <div>
             <h1 className="capitalize text-7xl">
