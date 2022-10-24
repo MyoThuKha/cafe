@@ -46,12 +46,12 @@ export default function Home({ data }) {
         {/* col2 */}
         <div className="col-span-1">
           <div className="grid grid-cols-2 h-screen overflow-hidden">
-            <div className="col-span-1">
-              <AnimatePresence>{!showList && <BlueImage />}</AnimatePresence>
-              {full ? (
-                <About curr={curr} handleChange={handleChange} />
-              ) : (
-                <div>
+            <div className="col-span-1 h-screen">
+              <div style={{ height: "90vh" }}>
+                <AnimatePresence>{!showList && <BlueImage />}</AnimatePresence>
+                {full ? (
+                  <About curr={curr} handleChange={handleChange} />
+                ) : (
                   <div className="py-2 text-center text-white">
                     {displayData.map((each) => {
                       return (
@@ -72,30 +72,31 @@ export default function Home({ data }) {
                       );
                     })}
                   </div>
-
-                  <div className="flex justify-end mr-8">
-                    <motion.svg
-                      whileTap={{ rotate: deg }}
-                      transition={{ stiffness: 300 }}
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-6 h-6 text-white"
-                      onClick={() => setShowList(!showList)}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d={
-                          showList
-                            ? "M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3"
-                            : "M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                        }
-                      />
-                    </motion.svg>
-                  </div>
+                )}
+              </div>
+              {!full && (
+                <div className="flex justify-end mr-8">
+                  <motion.svg
+                    whileTap={{ rotate: deg }}
+                    transition={{ stiffness: 300 }}
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6 text-white"
+                    onClick={() => setShowList(!showList)}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d={
+                        showList
+                          ? "M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3"
+                          : "M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                      }
+                    />
+                  </motion.svg>
                 </div>
               )}
             </div>
