@@ -21,7 +21,7 @@ const About = ({ curr, handleChange }) => {
       initial="init"
       animate="animation"
       transition="transition"
-      className="half-width"
+      className="half-width relative"
     >
       <div className="flex justify-end m-8">
         <motion.svg
@@ -32,9 +32,7 @@ const About = ({ curr, handleChange }) => {
           strokeWidth={1.5}
           stroke="currentColor"
           className="w-6 h-6 text-white"
-          onClick={() => {
-            handleChange();
-          }}
+          onClick={() => handleChange()}
         >
           <path
             strokeLinecap="round"
