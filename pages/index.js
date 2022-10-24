@@ -46,36 +46,34 @@ export default function Home({ data }) {
         {/* col2 */}
         <div className="col-span-1">
           <div className="grid grid-cols-2 h-screen overflow-hidden">
-            <div className="col-span-1 h-screen">
-              <div style={{ height: "90vh" }}>
-                <AnimatePresence>{!showList && <BlueImage />}</AnimatePresence>
-                {full ? (
-                  <About curr={curr} handleChange={handleChange} />
-                ) : (
-                  <div className="py-2 text-center text-white">
-                    {displayData.map((each) => {
-                      return (
-                        <div key={each.id} className="py-2 cursor-pointer">
-                          <motion.button
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 0.8 }}
-                            onClick={() => {
-                              setFull(true);
-                              setShowList(true);
-                              setCurr(each);
-                            }}
-                          >
-                            {each.title}
-                          </motion.button>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
+            <div className="col-span-1 h-screen relative">
+              <AnimatePresence>{!showList && <BlueImage />}</AnimatePresence>
+              {full ? (
+                <About curr={curr} handleChange={handleChange} />
+              ) : (
+                <div className="py-2 text-center text-white">
+                  {displayData.map((each) => {
+                    return (
+                      <div key={each.id} className="py-2 cursor-pointer">
+                        <motion.button
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 0.8 }}
+                          onClick={() => {
+                            setFull(true);
+                            setShowList(true);
+                            setCurr(each);
+                          }}
+                        >
+                          {each.title}
+                        </motion.button>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
               {!full && (
-                <div className="flex justify-end mr-8">
+                <div className="absolute bottom-4 right-4">
                   <motion.svg
                     whileTap={{ rotate: deg }}
                     transition={{ stiffness: 300 }}
