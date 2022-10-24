@@ -3,10 +3,10 @@ import Image from "next/image";
 const Col3 = () => {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ x: "100vw" }}
+      animate={{ x: 0 }}
       exit={{ x: "100vw", opacity: 0 }}
-      transition={{ stiffness: 10, duration: 1 }}
+      transition={{ stiffness: 10, duration: 0.8 }}
       className="col-span-1"
     >
       <div className="relative h-2/5">
